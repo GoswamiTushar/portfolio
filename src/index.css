@@ -1,0 +1,36 @@
+/* @font-face {
+  font-family: 'Dotline';
+  src: url('./assets/fonts/dotine-serif-display/Dotine_Serif_Display/Dotine.otf') format('opentype');
+} */
+
+/* @font-face {
+  font-family: 'Chitos Demo';
+  src: url('./assets/fonts/Chitos/Chitos\ Demo.ttf') format('WOFF2');
+} */
+
+:root {
+  --primaryDark: #191919;
+  --primaryMain: #ede9f3;
+  --primaryLight: #F8F8F8;
+  --primaryGrey: #272727;
+  --primaryBlack: #000000;
+  --primaryBlue: #6ec6dc;
+  --primaryYellow: #f59209;
+  --primaryDarkBlue: #1056b9;
+  
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Source Code Pro', monospace;
+}
