@@ -40,7 +40,7 @@ const CustomScreen = () => {
           fontSize: '35px',
           fontWeight: 500
         }}>Hello</p> */}
-        <img src={logoDark} alt="" width="90px" />
+        <img src={logo} alt="" width="90px" />
       </motion.div>
     </div>
   );
@@ -59,101 +59,12 @@ const AnimatedLogo = ({ children }) => {
 
 
 const TopSection = ({ isMenuOpen, setMenuOpen }) => {
-  const logoRef = useRef(null);
-
-  useEffect(() => {
-    // Function to check contrast and set the appropriate logo
-    function checkLogoContrast() {
-      if (!logoRef.current) return;
-
-      const logoElement = logoRef.current;
-      const logoImage = new Image();
-      logoImage.src = logoElement.src;
-      logoImage.onload = () => {
-        const backgroundColor = getComputedStyle(logoElement).backgroundColor;
-        const logoColor = getAverageColor(logoImage);
-
-        // You can adjust the threshold as needed to determine whether to use logoDark or logo
-        const contrastThreshold = 128; // Adjust this value
-        const contrast = getContrast(backgroundColor, logoColor);
-
-        if (contrast < contrastThreshold) {
-          logoElement.src = logoDark;
-        }
-      };
-    }
-
-    checkLogoContrast();
-    // You can also call checkLogoContrast() whenever the background changes, if necessary.
-  });
-
-  // Function to calculate the contrast between two colors
-  function getContrast(color1, color2) {
-    const rgb1 = parseColor(color1);
-    const rgb2 = parseColor(color2);
-
-    const luminance1 = calculateLuminance(rgb1);
-    const luminance2 = calculateLuminance(rgb2);
-
-    const brighter = Math.max(luminance1, luminance2);
-    const darker = Math.min(luminance1, luminance2);
-
-    return (brighter + 0.05) / (darker + 0.05);
-  }
-
-  // Function to parse a color string to RGB
-  function parseColor(color) {
-    const match = /rgb\((\d+), (\d+), (\d+)\)/.exec(color);
-    if (match) {
-      return {
-        r: parseInt(match[1], 10),
-        g: parseInt(match[2], 10),
-        b: parseInt(match[3], 10),
-      };
-    }
-    // You can add more color format handling here if needed
-    return { r: 0, g: 0, b: 0 };
-  }
-
-  // Function to calculate the luminance of an RGB color
-  function calculateLuminance(rgb) {
-    return 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
-  }
-
-  // Function to get the average color of an image (assuming it's the logo image)
-  function getAverageColor(image) {
-    const canvas = document.createElement('canvas');
-    canvas.width = image.width;
-    canvas.height = image.height;
-
-    const context = canvas.getContext('2d');
-    context.drawImage(image, 0, 0);
-
-    const imageData = context.getImageData(0, 0, image.width, image.height).data;
-
-    let r = 0;
-    let g = 0;
-    let b = 0;
-
-    for (let i = 0; i < imageData.length; i += 4) {
-      r += imageData[i];
-      g += imageData[i + 1];
-      b += imageData[i + 2];
-    }
-
-    const pixelCount = imageData.length / 4;
-    r = Math.round(r / pixelCount);
-    g = Math.round(g / pixelCount);
-    b = Math.round(b / pixelCount);
-
-    return { r, g, b };
-  }
 
   return (
     <div className='top-section'>
       <div className="name-container logo">
         <AnimatedLogo>
-          <img ref={logoRef} src={logo} alt="logo" width={45} />
+          <img src={logo} alt="logo" width={45} />
         </AnimatedLogo>
       </div>
       <div className="menu-container">
@@ -190,7 +101,7 @@ const Layout = ({ children }) => {
     <section style={{ position: 'relative' }}>
       {!showCustomScreen &&
         <TopSection isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
-      {showCustomScreen && <CustomScreen />} {/* Conditionally render the custom screen */}
+      {showCustomScreen && <CustomScreen />}
       {!showCustomScreen && <TopSection isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
       {!showCustomScreen && children}
     </section>

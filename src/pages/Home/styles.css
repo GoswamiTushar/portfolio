@@ -24,16 +24,40 @@
 }
 
 .page:nth-child(1) {
-    background: linear-gradient(90deg, var(--primaryDark) 70%, var(--primaryMain) 40%);
-    /* background-color: red; */
+    /* background: linear-gradient(90deg, var(--primaryDark) 70%, var(--primaryMain) 40%); */
+    background: linear-gradient(90deg, var(--primaryDark) 50dvw, transparent 300dvw),
+            url("../../Assets/images/mhx6v.gif");
+    /* background: url("../../Assets/images/ezgif.com-optimize.gif"); */
+    background-size: contain;
+    background-position: 180%;
     position: relative;
+    background-repeat: no-repeat;
+
+    @media (max-width: 600px){
+        background: linear-gradient(90deg, var(--primaryDark) 40%, transparent 160%),
+                url("../../Assets/images/mhx6v.gif");
+        background-size:500%;
+        background-position: center;
+    }
+
 }
 
-@media only screen and (max-width: 600px){
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+    /* background-color: rgba(35, 35, 35, 0.7); */
+}
+
+/* @media only screen and (max-width: 600px){
     .page:nth-child(1){
         background: linear-gradient(0deg, var(--primaryDark) 50%, var(--primaryMain) 30%);
     }
-}
+} */
 
 .page:nth-child(2){
     background-color: var(--primaryMain);
@@ -112,6 +136,7 @@
         color: var(--primaryYellow);
         font-weight: 900;
         letter-spacing: 4px;
+        /* text-shadow: -1px -1px 0 var(--primaryGrey), 1px -1px 0 var(--primaryGrey), -1px 1px 0 var(--primaryGrey), 1px 1px 0 var(--primaryGrey); */
     }
 }
 

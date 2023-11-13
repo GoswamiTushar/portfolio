@@ -8,6 +8,7 @@ const isMobile = window.innerWidth < 600
 const AboutSection = () => {
     return (
         <div className='about-section'>
+            <div class="blur-overlay"></div>
             <div className="content">
                 <div className="info-container">
                     <div>
@@ -20,7 +21,7 @@ const AboutSection = () => {
                             with great user experiences
                         </p>
                     </div>
-                    <div className='sub-info'>
+                    {/* <div className='sub-info'>
                         <p>
                             Highly skilled at progressive <br />
                             enhancement, design systems & UI <br />
@@ -29,7 +30,7 @@ const AboutSection = () => {
                         <p>
                             Proven experience building successful <br /> products for clients across <br /> several domains & countries.
                         </p>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="image-container">
@@ -42,20 +43,20 @@ const AboutSection = () => {
                     }}>
                         <img src={dp} alt="handsome" className='handsome' />
                     </span>
-                    <div className='lp-svg'>
+                    {/* <div className='lp-svg'>
                         <LPGraphics style={{
                             zIndex: '-1000'
                         }} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
-            <div className='drip'>
+            {/* <div className='drip'>
                 <DripOutline color='var(--primaryBlue)' style={{
                     scale: '50%',
                     opacity: '0.5'
                 }} />
-            </div>
+            </div> */}
         </div>
     )
 }
