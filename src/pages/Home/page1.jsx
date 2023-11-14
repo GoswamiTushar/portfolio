@@ -11,15 +11,19 @@ const AboutSection = () => {
             <div class="blur-overlay"></div>
             <div className="content">
                 <div className="info-container">
-                    <div>
-                        <p className='title'>
-                            Full Stack <br />
-                            Developer.
-                        </p>
-                        <p className='intro'>
-                            I like to craft solid {isMobile ? <br /> : void 0} and scalable products <br />
-                            with great user experiences
-                        </p>
+                    <div style={{
+                        // backdropFilter: 'invert(20%)',
+                        // padding: '20px',
+                        // borderRadius: '8px',
+                        // boxShadow: '10px 10px 10px -10px var(--primaryMain), -60px -30px 60px var(--primaryDark)'
+                    }}>
+                        I Provide <br />
+                        <span className='bold'>Software Solutions</span> <br />
+                        for your
+                        <span className='bold'>Business</span> Problems <br />
+                        <span className="sub-heading">
+                            Get ready to turn your <i>Dreams </i> into <i>Reality</i>
+                        </span>
                     </div>
                     {/* <div className='sub-info'>
                         <p>
@@ -33,8 +37,8 @@ const AboutSection = () => {
                     </div> */}
                 </div>
 
-                <div className="image-container">
-                    <span style={{
+                {/* <div className="image-container"> */}
+                {/* <span style={{
                         border: '1px solid var(--primaryBlue)',
                         width: '75%',
                         padding: '10px',
@@ -43,12 +47,12 @@ const AboutSection = () => {
                     }}>
                         <img src={dp} alt="handsome" className='handsome' />
                     </span>
-                    {/* <div className='lp-svg'>
+                    <div className='lp-svg'>
                         <LPGraphics style={{
                             zIndex: '-1000'
                         }} />
                     </div> */}
-                </div>
+                {/* </div> */}
             </div>
 
             {/* <div className='drip'>
