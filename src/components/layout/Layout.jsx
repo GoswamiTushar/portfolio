@@ -1,7 +1,7 @@
 import './styles.css'
 import logo from '../../Assets/icons/favicon.png'
 import logoDark from '../../Assets/icons/logo-grey.png'
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 
 const CustomScreen = () => {
@@ -40,7 +40,7 @@ const CustomScreen = () => {
           fontSize: '35px',
           fontWeight: 500
         }}>Hello</p> */}
-        <img src={logo} alt="" width="90px" />
+        <img src={logoDark} alt="" width="90px" />
       </motion.div>
     </div>
   );
@@ -99,9 +99,11 @@ const Layout = ({ children }) => {
 
   return (
     <section style={{ position: 'relative' }}>
+
+      {showCustomScreen && <CustomScreen />}
+
       {!showCustomScreen &&
         <TopSection isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
-      {showCustomScreen && <CustomScreen />}
       {!showCustomScreen && <TopSection isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
       {!showCustomScreen && children}
     </section>
