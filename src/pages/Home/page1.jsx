@@ -34,6 +34,8 @@ const AboutSection = () => {
                                     1000,
                                     'Expansion',
                                     1000,
+                                    'Branding',
+                                    1000
                                 ]}
                                 wrapper="span"
                                 speed={50}

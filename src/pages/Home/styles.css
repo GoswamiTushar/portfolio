@@ -55,7 +55,7 @@
 }
 
 .page:nth-child(2){
-    background-color: var(--primaryMain);
+    background-color: var(--primaryDark);
 }
 
 .content{
@@ -205,53 +205,51 @@
 /* page 2 */
 
 .page-2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
-    background-color: var(--primaryDarkBlue);
-    @media (max-width: 600px){
+    display: flex;
+    padding: 20px 100px
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.services {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    /* margin: auto */
+}
+
+.lottie-icon-container {
+    background: rgba(255, 255, 255, 0.1);
+    /* Slightly transparent white for a frosted glass effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* Soft shadows for a neo morphism look */
+    border-radius: 50%;
+    padding: 10px;
+    flex-shrink: 1;
+}
+
+@media only screen and (max-width: 600px){
+    .page-2{
         flex-direction: column;
-        padding: 20px;
+        padding: 10px;
     }
-}
-
-.design-container, .engineering-container{
-    @media (max-width:600px){
-        height: 50dvh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-        gap: 20px;
-        /* margin-top: 50px; */
+    .flex-item{
+        flex:1;
     }
-}
-
-.design-container{
-    @media (max-width:600px) {
-        border-bottom: 3px outset var(--primaryDarkBlue);
+    
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
-}
 
-.design-container > .heading, 
-.engineering-container > .heading {
-    color: var(--primaryLight);
-    font-weight: 800;
-    font-size: 40px;
-}
-
-.design-container > p,
-.engineering-container > p {
-    color: var(--primaryGrey);
-    word-break: break-word;
-    white-space: pre-line;
-    @media (max-width: 600px){
-        word-break: break-word;
-        white-space: pre-line;
-        font-size: 18px;
-        font-weight: 600;
+    .lottie-icon-container{
+        margin: auto;
     }
+    
 }
