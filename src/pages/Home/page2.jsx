@@ -10,8 +10,8 @@ import { useInView } from 'react-intersection-observer';
 const servicesData = [
   {
     animationData: ApplicationAnimation,
-    title: 'Web & App Development',
-    description: 'We build beautiful, responsive & feature-rich websites and applications that solve real customer problems',
+    title: 'Web Development',
+    description: 'We build beautiful, responsive & feature-rich websites and Progressive Web Applications that solve real customer problems',
   },
   {
     animationData: Cloud,
