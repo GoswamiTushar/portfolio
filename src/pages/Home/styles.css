@@ -220,7 +220,7 @@
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     /* margin: auto */
 }
 
@@ -232,6 +232,30 @@
     border-radius: 50%;
     padding: 10px;
     flex-shrink: 1;
+}
+
+.tech-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--primaryLight);
+}
+
+.tech-info .header{
+    color: var(--primaryYellow);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.tech-info .info{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    white-space: break-spaces;
+    /* word-break: break-all; */
+    overflow-wrap: break-word;
 }
 
 @media only screen and (max-width: 600px){
